@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomorrow – EPK | Badsleeper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* Animated gradient background */
+            background: linear-gradient(-45deg, #181824, #6c63ff, #232336, #ff6cbb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(35, 35, 54, 0.99);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 48px 36px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 32px;
+        }
+        .header img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(108,99,255,0.25);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .header img:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 8px 32px rgba(255,108,187,0.25);
+        }
+        .header-info {
+            flex: 1;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            font-size: 2.8rem;
+            margin: 0 0 8px 0;
+            color: #fff;
+            text-shadow: 0 0 8px #6c63ff, 0 0 16px #ff6cbb44;
+            letter-spacing: 1px;
+        }
+        .meta {
+            color: #e0e0fa;
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+        }
+        .listen-section {
+            margin: 36px 0 0 0;
+            text-align: center;
+        }
+        .listen-section h2 {
+            font-size: 1.3rem;
+            color: #ff6cbb;
+            margin-bottom: 18px;
+            text-shadow: 0 0 8px #ff6cbb99, 0 0 12px #6c63ff44;
+            letter-spacing: 1px;
+        }
+        .soundcloud-embed {
+            margin: 0 auto 10px auto;
+            max-width: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 32px #ff6cbb33, 0 2px 12px #6c63ff33;
+        }
+        .soundcloud-credit {
+            font-size: 10px;
+            color: #cccccc;
+            line-break: anywhere;
+            word-break: normal;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-family: 'Montserrat', Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+            font-weight: 100;
+            margin-top: 2px;
+        }
+        .soundcloud-credit a {
+            color: #cccccc;
+            text-decoration: none;
+        }
+        .soundcloud-credit a:hover {
+            color: #ff6cbb;
+            text-decoration: underline;
+        }
+        .section {
+            margin-top: 40px;
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 12px;
+            border-left: 4px solid #ff6cbb;
+            padding-left: 12px;
+            text-shadow: 0 0 6px #ff6cbb99, 0 0 12px #6c63ff44;
+        }
+        .links a {
+            display: inline-block;
+            margin-right: 20px;
+            color: #6c63ff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.08rem;
+            padding: 6px 18px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
+            box-shadow: 0 2px 8px #6c63ff22;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .links a:hover {
+            color: #fff;
+            background: #6c63ff;
+            box-shadow: 0 4px 16px #ff6cbb44;
+            transform: translateY(-2px) scale(1.07);
+            text-shadow: 0 0 8px #fff;
+        }
+        .artwork {
+            margin-top: 28px;
+            text-align: center;
+        }
+        .artwork img {
+            max-width: 340px;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(255,108,187,0.18), 0 2px 12px rgba(108,99,255,0.18);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .artwork img:hover {
+            box-shadow: 0 8px 48px #6c63ff55, 0 4px 24px #ff6cbb55;
+            transform: scale(1.04) rotate(1deg);
+        }
+        .contact {
+            margin-top: 36px;
+            font-size: 1.15rem;
+        }
+        .contact a {
+            color: #ff6cbb;
+            text-shadow: 0 0 6px #ff6cbb99;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+        .contact a:hover {
+            color: #fff;
+            text-shadow: 0 0 12px #6c63ff99;
+        }
+        .section.about-artist p,
+        .section.about-song p {
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 14px; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .header img { width: 120px; height: 120px; }
+        }
+        .section.artwork h2 {
+            text-align: center;
+            border-left: none;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            padding-left: 0;
+            text-shadow: 0 0 6px #ff6cbb99, 0 0 12px #6c63ff44;
+        }
+        .pipe-accent {
+            color: #ff6cbb;
+            margin-right: 8px;
+        }
+        .email-label {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="BadSleeper.png" alt="Badsleeper photo">
+            <div class="header-info">
+                <h1>Tomorrow</h1>
+                <div class="meta">by Badsleeper | Electro Pop | Release: 04/28/2025</div>
+                <div class="links">
+                    <a href="https://linktr.ee/badsleeper" target="_blank">Linktree</a>
+                </div>
+            </div>
+        </div>
+        <div class="listen-section">
+            <h2>Listen</h2>
+            <div class="soundcloud-embed">
+                <iframe width="100%" height="160" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092357407&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+            <div class="soundcloud-credit">
+                <a href="https://soundcloud.com/badsleeper-49083480" title="Badsleeper" target="_blank">Badsleeper</a> · <a href="https://soundcloud.com/badsleeper-49083480/tomorrow" title="Tomorrow" target="_blank">Tomorrow</a>
+            </div>
+        </div>
+        <div class="section about-artist">
+            <h2>About the Artist</h2>
+            <p>Joseph David Bennett is a multi-instrumentalist, songwriter, and producer whose music blends introspective lyrics with genre-blurring soundscapes. Rooted in raw emotion and sonic experimentation, his work explores identity, transformation, and the search for meaning in a fragmented world. Drawing from electronic, alternative, and folk influences, Bennett crafts immersive tracks that feel as personal as they are universal. Whether alone with a guitar or surrounded by layered production, his sound invites listeners into a space that's both intimate and expansive.</p>
+        </div>
+        <div class="section about-song">
+            <h2>About the Song</h2>
+            <p>Tomorrow is a lush, introspective journey through the fog of identity, uncertainty, and transformation. Written and performed by Joseph David Bennett, the track weaves organic instrumentation with subtle electronic elements to create a soundscape that feels both grounded and ethereal. With raw lyrical vulnerability, Bennett asks weighty questions like "what if there is no me to be searching for?" Produced in collaboration with 9 Theory and Jonathan Killian, Tomorrow captures the emotional push and pull between inertia and change—a meditation on selfhood, delay, and the quiet hope that freedom might still lie just beyond the next dawn.</p>
+        </div>
+        <div class="section artwork">
+            <h2><span class="pipe-accent">|</span> Artwork</h2>
+            <img src="Tomorrow.png" alt="Tomorrow artwork">
+        </div>
+        <div class="section">
+            <h2>Social Media</h2>
+            <div class="links">
+                <a href="https://www.instagram.com/badsleeperr/" target="_blank">Instagram</a><a href="https://x.com/badsleeperr" target="_blank">X</a><a href="https://www.youtube.com/@bad.sleeper" target="_blank">YouTube</a>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Contact</h2>
+            <div class="contact"><span class="email-label">Email:</span> <a href="mailto:bad.sleeperr@gmail.com">bad.sleeperr@gmail.com</a></div>
+        </div>
+    </div>
+</body>
+</html>
